@@ -1,1 +1,1 @@
-<a>Hola soy{{$nombre}} </a>
+<a>Mi nombre es {{$nombre}} </a>
