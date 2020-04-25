@@ -3,7 +3,8 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
-    <a href="{{url('perfin','edilson')}}">edilson</a>
+    <a href="{{url('perfin','edilson')}}">edilson</a><br>   
+    <a href="{{route('welcome.show')}}">welcome</a>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
