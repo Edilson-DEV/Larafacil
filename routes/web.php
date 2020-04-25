@@ -41,6 +41,14 @@ Route::get('/producto3/{a}/{b}', function($a,$b){
 Route::get('/perfin/{nombre}', function ($nombre) {
     return view('perfin',compact('nombre'));
 });
+Route::get('/login', function(){
+   
+    return view('login');
+})->name('Login.show');
+
+Route::get('/formulario', 'Usuariocontroller@getFormulario');
+Route::post('/register','Usuariocontroller@usuarioRegister')->name('usuario.register');
+
 //coltrol + {
 // Route::get('/nilda',function (){
 //     return view('nilda');
