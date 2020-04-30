@@ -49,6 +49,17 @@ Route::get('/login', function(){
 Route::get('/formulario', 'Usuariocontroller@getFormulario');
 Route::post('/register','Usuariocontroller@usuarioRegister')->name('usuario.register');
 
+Route::resource('usuario','UsuarioController');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+
+
+
+
+
 //coltrol + {
 // Route::get('/nilda',function (){
 //     return view('nilda');

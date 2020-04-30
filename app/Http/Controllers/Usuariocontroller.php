@@ -14,6 +14,9 @@ class Usuariocontroller extends Controller
     public function index()
     {
         //
+        $nombre='Edilson';
+        $apellido='Mamani';
+        return view('login',compact('nombre','apellido'));
     }
 
     /**
@@ -82,7 +85,7 @@ class Usuariocontroller extends Controller
         //
     }
     public function usuarioRegister(Request $request){
-        dd($request->email);
+        dd($request);
 
     }
     public function getFormulario(){
