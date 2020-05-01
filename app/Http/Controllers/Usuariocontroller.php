@@ -62,7 +62,7 @@ class Usuariocontroller extends Controller
      */
     public function show($id)
     {
-        //
+        //dd($id);
     }
 
     /**
@@ -91,6 +91,12 @@ return view('usuarios.edit',compact('usuario'));
     public function update(Request $request, $id)
     {
         //actualizacion
+        $usuario=User::find($id);
+        $usuario->name=$request->name;
+        $usuario->email=$request->email;
+        $usuario->update();
+        return redirect('usuarios');
+       // dd($id);
     }
 
     /**
@@ -104,6 +110,7 @@ return view('usuarios.edit',compact('usuario'));
         //
     }
     public function usuarioRegister(Request $request){
+     
         dd($request);
 
     }
