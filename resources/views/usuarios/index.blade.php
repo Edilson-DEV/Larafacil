@@ -17,6 +17,7 @@
       <th>#</th>
       <th>Nombre</th>
       <th>Correo</th>
+      <th>Acciones</th>
     </tr>
   </thead>
   <tbody>
@@ -25,6 +26,7 @@
       <th scope="row">1</th>
       <td>{{$usuario->name}}</td>
       <td>{{$usuario->email}}</td>
+      <td><a href="{{route('usuarios.edit',$usuario->id)}}" type="button" class="btn btn-warning">Editar</a></td>
     </tr>
     @endforeach
   </tbody>

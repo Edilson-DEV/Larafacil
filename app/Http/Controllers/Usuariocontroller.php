@@ -74,6 +74,11 @@ class Usuariocontroller extends Controller
     public function edit($id)
     {
         //devuelve una vista
+        // dd($id);
+        $usuario= User::find($id);
+    
+return view('usuarios.edit',compact('usuario'));
+        
     }
 
     /**
