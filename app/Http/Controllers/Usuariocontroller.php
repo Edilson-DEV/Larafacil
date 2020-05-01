@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+
 
 class Usuariocontroller extends Controller
 {
@@ -32,6 +34,7 @@ class Usuariocontroller extends Controller
     public function create()
     {
         //
+        return view('usuarios.create');
     }
 
     /**
@@ -42,7 +45,13 @@ class Usuariocontroller extends Controller
      */
     public function store(Request $request)
     {
-        //
+       // dd($request->name);
+        $usuario=new User();
+        $usuario->name=$request->name;
+        $usuario->email=$request->email;
+        $usuario->password =  Hash::make( $request->password);
+        $usuario->save();
+        return redirect('usuarios');
     }
 
     /**
@@ -64,7 +73,7 @@ class Usuariocontroller extends Controller
      */
     public function edit($id)
     {
-        //
+        //devuelve una vista
     }
 
     /**
@@ -76,7 +85,7 @@ class Usuariocontroller extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        //actualizacion
     }
 
     /**
@@ -93,8 +102,10 @@ class Usuariocontroller extends Controller
         dd($request);
 
     }
+
     public function getFormulario(){
         
         return view('login');
     }
+
 }

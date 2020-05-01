@@ -6,7 +6,7 @@
 <div class="card">
     <div class="card-header">
     <h4 class="card-title float-left">Lista de Usuarios </h4>
-            <a href="#" class="btn btn-sm btn-success float-right"><i class="fa fa-plus-circle"></i> Nuevo Usuario</a>
+            <a href="{{route('usuarios.create')}}" class="btn btn-sm btn-success float-right"><i class="fa fa-plus-circle"></i> Nuevo Usuario</a>
 
 
     </div>

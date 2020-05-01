@@ -58,6 +58,11 @@ Route::resource('usuarios','UsuarioController');
 
 
 
+
+
+
+
+
 //coltrol + {
 // Route::get('/nilda',function (){
 //     return view('nilda');
@@ -75,4 +80,3 @@ Route::resource('usuarios','UsuarioController');
 // Route::post('/login/{nombre}/{contrasenia}',function ($nombre,$contrasenia){
 //     return view('login',compact('nombre','contrasenia'));
 // });
-
