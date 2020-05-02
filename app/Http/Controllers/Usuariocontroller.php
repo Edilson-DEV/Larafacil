@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Http\Requests\RegisterUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+
 
 
 class Usuariocontroller extends Controller
@@ -43,7 +46,7 @@ class Usuariocontroller extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(RegisterUserRequest $request)
     {
        // dd($request->name);
         $usuario=new User();
@@ -88,7 +91,7 @@ return view('usuarios.edit',compact('usuario'));
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UpdateUserRequest $request, $id)
     {
         //actualizacion
         $usuario=User::find($id);
@@ -108,6 +111,15 @@ return view('usuarios.edit',compact('usuario'));
     public function destroy($id)
     {
         //
+       // User::delete($id);
+       // return redirect()->route('usuarios.destroy');
+        $usuario = User::find($id);
+        
+        $usuario->delete();
+ 
+        return redirect()->route('usuarios.index');
+            
+
     }
     public function usuarioRegister(Request $request){
      

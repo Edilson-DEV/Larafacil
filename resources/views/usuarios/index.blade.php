@@ -18,6 +18,7 @@
       <th>Nombre</th>
       <th>Correo</th>
       <th>Acciones</th>
+      <th>Eliminar</th>
     </tr>
   </thead>
   <tbody>
@@ -27,6 +28,13 @@
       <td>{{$usuario->name}}</td>
       <td>{{$usuario->email}}</td>
       <td><a href="{{route('usuarios.edit',$usuario->id)}}" type="button" class="btn btn-warning">Editar</a></td>
+      
+      <td> <form action="{{route('usuarios.destroy',$usuario->id)}}" method="post">
+      @csrf
+      @method('DELETE')
+      <button class="btn btn-danger" type= submit onclick="return confirm('¿Eliminar Usuario?')">Eliminar Usuario</button>
+      </form>
+    </td>
     </tr>
     @endforeach
   </tbody>
