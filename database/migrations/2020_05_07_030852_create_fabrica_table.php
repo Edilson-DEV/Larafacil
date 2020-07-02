@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipotelefonoTable extends Migration
+class CreateFabricaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,13 @@ class CreateTipotelefonoTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipotelefono', function (Blueprint $table) {
-            $table->id();
+        Schema::create('fabrica', function (Blueprint $table) {
+            $table->id('idFabrica');
+            $table->string('nit');
+            $table->string('nombre');
+            $table->string('sitioWeb');
+            $table->string('correoElectronico');
+            $table->boolean('estado');
             $table->timestamps();
         });
     }
@@ -26,6 +31,6 @@ class CreateTipotelefonoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipotelefono');
+        Schema::dropIfExists('fabrica');
     }
 }
